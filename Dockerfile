@@ -1,8 +1,8 @@
 FROM	python:3.11-slim
 WORKDIR	/app
 RUN echo "Files visible to Docker build:" && ls -la / && ls -la . && ls -la ..
-COPY	static_server/	/app/
-COPY	static_server/staticfiles	/app/staticfiles/
+COPY	.	/app/
+COPY	./staticfiles	/app/staticfiles/
 ENV	PORT=9090
 ENV	FLASK_APP=app.py
 RUN	pip install --upgrade pip \
